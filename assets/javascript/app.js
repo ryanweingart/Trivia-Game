@@ -63,6 +63,55 @@ var game = {
             } else {
                 game.incorrect++;
             }
-        })
+        });
+        $.each($('input[name= "question: 1]" :checked'), function (){
+            if ($(this).val() === questionsArray[1].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 2]" :checked'), function (){
+            if ($(this).val() === questionsArray[2].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 3]" :checked'), function (){
+            if ($(this).val() === questionsArray[3].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 4]" :checked'), function (){
+            if ($(this).val() === questionsArray[4].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 5]" :checked'), function (){
+            if ($(this).val() === questionsArray[5].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 6]" :checked'), function (){
+            if ($(this).val() === questionsArray[6].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question: 7]" :checked'), function (){
+            if ($(this).val() === questionsArray[7].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
     }
 }
