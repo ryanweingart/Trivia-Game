@@ -2,6 +2,10 @@ $("#start").on("click", function (){
    game.start();
 });
 
+$(document).on("click", "#reset", function(){
+    game.reset();
+});
+
 var questionsArray = [{
     question:"what is the answer",
     answers: ["a", "b", "c", "d"],
@@ -44,6 +48,18 @@ var game = {
             console.log("time up");
             game.done();
         }
+    },
+
+    reset: function (){
+        $(".content h2").remove();
+        $(".content h3").remove();
+        $(".content button").remove();
+        game.question = 0;
+        game.counter = 4;
+        game.correct = 0;
+        game.incorrect = 0;
+        game.start();
+
     },
     start: function (){
         timer = setInterval (game.countDown, 1000);
@@ -124,5 +140,7 @@ var game = {
             $(".content").append("<h3>Correct: " + this.correct + "</h3>");
             $(".content").append("<h3>Incorrect: " + this.incorrect + "</h3>");
             $(".content").append("<h3>Unanswered: " + (questionsArray.length - (this.correct + this.incorrect)) + "<h3");
+            $(".content").append('<button id="reset">Play Again!</button>');
+
         }
 }
