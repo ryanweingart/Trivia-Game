@@ -1,11 +1,17 @@
+//Event to start the game.
+//======================================================================================================================================================================
 $("#start").on("click", function (){
    game.start();
 });
 
+//Event to reset the game.
+//======================================================================================================================================================================
 $(document).on("click", "#reset", function(){
     game.reset();
 });
 
+//Array of questions, answers to the questions, and the correct answer for each question.
+//======================================================================================================================================================================
 var questionsArray = [{
     question:"what is the answer",
     answers: ["a", "b", "c", "d"],
@@ -37,6 +43,8 @@ var questionsArray = [{
 
 }];
 
+//Game variable where all functions will reside. Starts by setting correct/incorrect to 0, counter to 30 seconds and runs the countDown function.
+//======================================================================================================================================================================
 var game = {
     correct: 0,
     incorrect: 0,
@@ -45,11 +53,12 @@ var game = {
         game.counter--;
         $("#counter").html(game.counter);
         if (game.counter <= 0) {
-            console.log("time up");
             game.done();
         }
     },
 
+    //Function to reset all values back to zero and counter back to 30 seconds. Removes results information and calls the start function.
+    //======================================================================================================================================================================
     reset: function (){
         $(".content h2").remove();
         $(".content h3").remove();
@@ -59,8 +68,10 @@ var game = {
         game.correct = 0;
         game.incorrect = 0;
         game.start();
-
     },
+
+    //Function to begin game.
+    //======================================================================================================================================================================
     start: function (){
         timer = setInterval (game.countDown, 1000);
         $(".content").prepend('<h2>Time Remaining: <span id="counter">60</span> Seconds</h2>');
@@ -72,6 +83,9 @@ var game = {
             }
         }
     },
+
+    //Function to check if the answer is correct or incorrect and adds to results.
+    //======================================================================================================================================================================
     done: function () {
         $.each($('input[name="question-0"]:checked'), function (){
             if ($(this).val() === questionsArray[0].correctAnswer){
@@ -133,6 +147,8 @@ var game = {
         this.result();
         },
 
+        //Function to display correct, incorrect and unanswered values along with a button to play again.
+        //======================================================================================================================================================================
         result: function (){
             clearInterval(timer);
             $(".content h2").remove();
