@@ -13,34 +13,45 @@ $(document).on("click", "#reset", function(){
 //Array of questions, answers to the questions, and the correct answer for each question.
 //======================================================================================================================================================================
 var questionsArray = [{
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
+    question:"What is the capitol of Arizona?",
+    answers: ["Scottsdale", "Tempe", "Phoenix", "Tucson"],
+    correctAnswer:"Phoenix"
+}, {
+    question:"What is the capitol of California?",
+    answers: ["San Francisco", "Sacramento", "Los Angeles", "San Diego"],
+    correctAnswer:"Sacramento"
+}, {
+    question:"What is the capitol of Florida?",
+    answers: ["Orlando", "Miami", "Tallahassee", "Jacksonville"],
+    correctAnswer:"Tallahassee"
+}, {
+    question:"What is the capitol of Illinois?",
+    answers: ["Peoria", "Chicago", "Champaign", "Springfield"],
+    correctAnswer:"Springfield"
+}, {
+    question:"What is the capitol of Kentucky?",
+    answers: ["Frankfort", "Louisville", "Lexington", "Owensboro"],
     correctAnswer:"a"
 }, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
+    question:"What is the capitol of New York?",
+    answers: ["New York", "Albany", "Rochester", "Buffalo"],
+    correctAnswer:"Albany"
 }, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
+    question:"What is the capitol of North Carolina?",
+    answers: ["Greensboro", "Asheville", "Raleigh", "Charlotte"],
+    correctAnswer:"Raleigh"
 }, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
+    question:"What is the capitol of Texas?",
+    answers: ["Austin", "Houston", "Dallas", "San Antonio"],
+    correctAnswer:"Austin"
 }, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
+    question:"What is the capitol of Wisconsin?",
+    answers: ["Green Bay", "Appleton", "Madison", "Milwaukee"],
+    correctAnswer:"Madison"
 }, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
-}, {
-    question:"what is the answer",
-    answers: ["a", "b", "c", "d"],
-    correctAnswer:"a"
-
+    question:"What is the capitol of Massachusetts?",
+    answers: ["Cambridge", "Worcester", "Springfield", "Boston"],
+    correctAnswer:"Boston"
 }];
 
 //Game variable where all functions will reside. Starts by setting correct/incorrect to 0, counter to 30 seconds and runs the countDown function.
