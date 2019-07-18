@@ -1,0 +1,15 @@
+.jumbotron {
+    background-color: slategray;
+    color: white;
+}
+
+.btn {
+    background-color: indianred;
+    color: white;
+    border: solid 1px white;
+}
+
+.btn:hover {
+    background-color: cadetblue;
+    color: white;
+}
