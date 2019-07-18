@@ -31,7 +31,7 @@ var questionsArray = [{
 }, {
     question:"What is the capitol of Kentucky?",
     answers: ["Frankfort", "Louisville", "Lexington", "Owensboro"],
-    correctAnswer:"a"
+    correctAnswer:"Frankfort"
 }, {
     question:"What is the capitol of New York?",
     answers: ["New York", "Albany", "Rochester", "Buffalo"],
@@ -87,6 +87,7 @@ var game = {
         timer = setInterval (game.countDown, 1000);
         $(".content").prepend('<h2>Time Remaining: <span id="counter">30</span> Seconds</h2>');
         $("#start").remove();
+        $("#begin").remove();
         for (i = 0; i < questionsArray.length; i++) {
             $(".content").append('<h2>' + questionsArray[i].question + '<h2>');
             for (x = 0; x < questionsArray[i].answers.length; x++) {
@@ -149,6 +150,27 @@ var game = {
         });
         $.each($('input[name= "question-7"]:checked'), function (){
             if ($(this).val() === questionsArray[7].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question-8"]:checked'), function (){
+            if ($(this).val() === questionsArray[8].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question-9"]:checked'), function (){
+            if ($(this).val() === questionsArray[9].correctAnswer){
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($('input[name= "question-10"]:checked'), function (){
+            if ($(this).val() === questionsArray[10].correctAnswer){
                 game.correct++;
             } else {
                 game.incorrect++;
