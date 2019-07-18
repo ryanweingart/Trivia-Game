@@ -13,3 +13,45 @@
     background-color: cadetblue;
     color: white;
 }
+
+.answers {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: steelblue;
+}
+        
+h2 {
+    color: cadetblue;
+}
+
+#counter {
+    color: coral;
+}
+
+#finish {
+    color: coral;
+    text-decoration: underline;
+}
+
+#incorrect {
+    color: indianred;
+}
+
+#unanswered {
+    color: cadetblue;
+}
+
+#reset {
+    background-color: slategray;
+    color: white;
+    border: solid 1px coral;
+}
+
+#reset:hover {
+    background-color: white;
+    color: slategray;
+}

@@ -13,43 +13,43 @@ $(document).on("click", "#reset", function(){
 //Array of questions, answers to the questions, and the correct answer for each question.
 //======================================================================================================================================================================
 var questionsArray = [{
-    question:"What is the capitol of Arizona?",
+    question:"What is the capital of Arizona?",
     answers: ["Scottsdale", "Tempe", "Phoenix", "Tucson"],
     correctAnswer:"Phoenix"
 }, {
-    question:"What is the capitol of California?",
+    question:"What is the capital of California?",
     answers: ["San Francisco", "Sacramento", "Los Angeles", "San Diego"],
     correctAnswer:"Sacramento"
 }, {
-    question:"What is the capitol of Florida?",
+    question:"What is the capital of Florida?",
     answers: ["Orlando", "Miami", "Tallahassee", "Jacksonville"],
     correctAnswer:"Tallahassee"
 }, {
-    question:"What is the capitol of Illinois?",
+    question:"What is the capital of Illinois?",
     answers: ["Peoria", "Chicago", "Champaign", "Springfield"],
     correctAnswer:"Springfield"
 }, {
-    question:"What is the capitol of Kentucky?",
+    question:"What is the capital of Kentucky?",
     answers: ["Frankfort", "Louisville", "Lexington", "Owensboro"],
     correctAnswer:"Frankfort"
 }, {
-    question:"What is the capitol of New York?",
+    question:"What is the capital of New York?",
     answers: ["New York", "Albany", "Rochester", "Buffalo"],
     correctAnswer:"Albany"
 }, {
-    question:"What is the capitol of North Carolina?",
+    question:"What is the capital of North Carolina?",
     answers: ["Greensboro", "Asheville", "Raleigh", "Charlotte"],
     correctAnswer:"Raleigh"
 }, {
-    question:"What is the capitol of Texas?",
+    question:"What is the capital of Texas?",
     answers: ["Austin", "Houston", "Dallas", "San Antonio"],
     correctAnswer:"Austin"
 }, {
-    question:"What is the capitol of Wisconsin?",
+    question:"What is the capital of Wisconsin?",
     answers: ["Green Bay", "Appleton", "Madison", "Milwaukee"],
     correctAnswer:"Madison"
 }, {
-    question:"What is the capitol of Massachusetts?",
+    question:"What is the capital of Massachusetts?",
     answers: ["Cambridge", "Worcester", "Springfield", "Boston"],
     correctAnswer:"Boston"
 }];
@@ -89,9 +89,9 @@ var game = {
         $("#start").remove();
         $("#begin").remove();
         for (i = 0; i < questionsArray.length; i++) {
-            $(".content").append('<h2>' + questionsArray[i].question + '<h2>');
+            $(".content").append('<h3>' + questionsArray[i].question + '<h3>');
             for (x = 0; x < questionsArray[i].answers.length; x++) {
-                $(".content").append("<input type='radio' name='question-"+i+"' value='" + questionsArray[i].answers[x] + "'> "+ questionsArray[i].answers[x]);
+                $(".content").append("<input class='answers' type='radio' name='question-"+i+"' value='" + questionsArray[i].answers[x] + "'> "+ questionsArray[i].answers[x]);
             }
         }
     },
@@ -185,11 +185,11 @@ var game = {
         result: function (){
             clearInterval(timer);
             $(".content h2").remove();
-            $(".content").html("<h2>Finished!<h2>");
+            $(".content").html("<h2 id='finish'>FINISHED!<h2>");
             $(".content").append("<h3>Correct: " + this.correct + "</h3>");
-            $(".content").append("<h3>Incorrect: " + this.incorrect + "</h3>");
-            $(".content").append("<h3>Unanswered: " + (questionsArray.length - (this.correct + this.incorrect)) + "<h3");
-            $(".content").append('<button id="reset">Play Again!</button>');
+            $(".content").append("<h3 id='incorrect'>Incorrect: " + this.incorrect + "</h3>");
+            $(".content").append("<h3 id='unanswered'>Unanswered: " + (questionsArray.length - (this.correct + this.incorrect)) + "<h3");
+            $(".content").append('<button class="btn" id="reset">Play Again!</button>');
 
         }
 }
